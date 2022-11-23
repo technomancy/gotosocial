@@ -9,7 +9,9 @@ import (
 
 func InitPlugin(name string) *lua.LState {
 	l := lua.NewState()
-	l.DoFile("plugins/" + name + ".lua")
+	l.DoString("fennel = dofile('plugins/fennel.lua')")
+	l.DoString("plugin = fennel.dofile('plugins/" + name + ".fnl')")
+	l.DoString("print('initializing plugins', plugin)")
 	return l
 }
 
