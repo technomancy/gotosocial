@@ -28,6 +28,8 @@ import (
 	"github.com/superseriousbusiness/gotosocial/internal/gtsmodel"
 )
 
+var plugin = InitPlugin("autocw")
+
 func (p *processor) Get(ctx context.Context, requestingAccount *gtsmodel.Account, targetStatusID string) (*apimodel.Status, gtserror.WithCode) {
 	targetStatus, err := p.db.GetStatusByID(ctx, targetStatusID)
 	if err != nil {
@@ -44,6 +46,8 @@ func (p *processor) Get(ctx context.Context, requestingAccount *gtsmodel.Account
 	if !visible {
 		return nil, gtserror.NewErrorNotFound(errors.New("status is not visible"))
 	}
+
+	PluginProcess(plugin, targetStatus)
 
 	apiStatus, err := p.tc.StatusToAPIStatus(ctx, targetStatus, requestingAccount)
 	if err != nil {
