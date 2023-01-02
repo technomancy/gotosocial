@@ -26,13 +26,13 @@ import (
 )
 
 // Defaults contains a populated Configuration with reasonable defaults. Note that
-// if you use this, you will still need to set Host, and, if desired, ConfigPath.
+// if you use this, you will still need to set Host.
 var Defaults = Configuration{
 	LogLevel:        "info",
 	LogDbQueries:    false,
 	ApplicationName: "gotosocial",
 	LandingPageUser: "",
-	ConfigPath:      "",
+	ConfigPath:      "config.yaml",
 	Host:            "",
 	AccountDomain:   "",
 	Protocol:        "https",

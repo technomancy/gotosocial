@@ -64,6 +64,7 @@ import (
 	"github.com/superseriousbusiness/gotosocial/internal/messages"
 	"github.com/superseriousbusiness/gotosocial/internal/oauth"
 	"github.com/superseriousbusiness/gotosocial/internal/oidc"
+	"github.com/superseriousbusiness/gotosocial/internal/plugin"
 	"github.com/superseriousbusiness/gotosocial/internal/processing"
 	"github.com/superseriousbusiness/gotosocial/internal/router"
 	"github.com/superseriousbusiness/gotosocial/internal/state"
@@ -96,6 +97,9 @@ var Start action.GTSAction = func(ctx context.Context) error {
 	if err := dbService.CreateInstanceInstance(ctx); err != nil {
 		return fmt.Errorf("error creating instance instance: %s", err)
 	}
+
+	// Load plugins
+	state.Plugins = plugin.Init()
 
 	// Create the client API and federator worker pools
 	// NOTE: these MUST NOT be used until they are passed to the

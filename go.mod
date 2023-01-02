@@ -49,6 +49,7 @@ require (
 	github.com/uptrace/bun/dialect/sqlitedialect v1.1.9
 	github.com/wagslane/go-password-validator v0.3.0
 	github.com/yuin/goldmark v1.5.3
+	github.com/yuin/gopher-lua v0.0.0-20220504180219-658193537a64
 	golang.org/x/crypto v0.0.0-20220829220503-c86fa9a7ed90
 	golang.org/x/exp v0.0.0-20220613132600-b0d781184e0d
 	golang.org/x/image v0.2.0
@@ -57,6 +58,7 @@ require (
 	golang.org/x/text v0.5.0
 	gopkg.in/mcuadros/go-syslog.v2 v2.3.0
 	gopkg.in/yaml.v3 v3.0.1
+	layeh.com/gopher-luar v1.0.10
 	modernc.org/sqlite v1.19.5
 	mvdan.cc/xurls/v2 v2.4.0
 )

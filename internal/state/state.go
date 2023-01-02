@@ -21,6 +21,7 @@ package state
 import (
 	"github.com/superseriousbusiness/gotosocial/internal/cache"
 	"github.com/superseriousbusiness/gotosocial/internal/db"
+	"github.com/superseriousbusiness/gotosocial/internal/plugin"
 )
 
 // State provides a means of dependency injection and sharing of resources
@@ -35,6 +36,9 @@ type State struct {
 
 	// DB provides access to the database.
 	DB db.DB
+
+	// Plugins
+	Plugins plugin.Plugins
 
 	// prevent pass-by-value.
 	_ nocopy
