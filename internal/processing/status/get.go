@@ -43,6 +43,9 @@ func (p *Processor) HistoryGet(ctx context.Context, requestingAccount *gtsmodel.
 		return nil, errWithCode
 	}
 
+	// TODO: this doesn't actually do anything
+	PluginProcess(ctx, targetStatus)
+
 	return []*apimodel.StatusEdit{
 		{
 			Content:          apiStatus.Content,
@@ -67,6 +70,9 @@ func (p *Processor) Get(ctx context.Context, requestingAccount *gtsmodel.Account
 	if errWithCode != nil {
 		return nil, errWithCode
 	}
+
+	// TODO: this doesn't do anything
+	PluginProcess(ctx, targetStatus)
 
 	return p.c.GetAPIStatus(ctx, requestingAccount, targetStatus)
 }

@@ -79,6 +79,7 @@ require (
 	github.com/uptrace/bun/extra/bunotel v1.2.5
 	github.com/wagslane/go-password-validator v0.3.0
 	github.com/yuin/goldmark v1.7.8
+	github.com/yuin/gopher-lua v1.1.1
 	go.opentelemetry.io/otel v1.32.0
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.32.0
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.32.0
@@ -95,6 +96,7 @@ require (
 	golang.org/x/text v0.20.0
 	gopkg.in/mcuadros/go-syslog.v2 v2.3.0
 	gopkg.in/yaml.v3 v3.0.1
+	layeh.com/gopher-luar v1.0.11
 	modernc.org/sqlite v0.0.0-00010101000000-000000000000
 	mvdan.cc/xurls/v2 v2.5.0
 )

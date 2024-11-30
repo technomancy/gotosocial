@@ -148,6 +148,8 @@ func (p *Processor) Create(
 		}
 	}
 
+	PluginProcess(ctx, status)
+
 	// Insert this new status in the database.
 	if err := p.state.DB.PutStatus(ctx, status); err != nil {
 		return nil, gtserror.NewErrorInternalError(err)
